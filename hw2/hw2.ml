@@ -8,7 +8,7 @@ let tLeft = failwith "Implement"
 
 let tRight = failwith "Implement"
 
-let dTree = tLeft || tRight
+let dTree = Empty | tLeft tRight
 
 let dTree_height (t:dTree) : int = 
 	failwith "Implement"
