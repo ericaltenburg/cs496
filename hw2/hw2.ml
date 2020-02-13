@@ -4,11 +4,11 @@
 	Date: 			10 February 2020 
 *)
 
+type ('a, 'b) dTree = Leaf of 'a | Node of 'b * ('a,'b) dTree * ('a,'b) dTree
+
 let tLeft = failwith "Implement"
 
 let tRight = failwith "Implement"
-
-let dTree = Empty | tLeft tRight
 
 let dTree_height (t:dTree) : int = 
 	failwith "Implement"
