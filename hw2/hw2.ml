@@ -7,21 +7,6 @@
 type ('a, 'b) dTree = Leaf of 'b | Node of 'a * ('a, 'b) dTree * ('a, 'b) dTree
 
 (* Just for testing, IGNORE *)
-type dtree = Node of char * dtree * dtree | Child of int;;
-let draw dtree =
-  let rec print indent dtree =
-    match dtree with
-       Child n -> 
-        Printf.printf "%s%d\n" indent n
-     | Node (left, n, right) ->
-        Printf.printf "%s----\n" indent;
-        print (indent ^ "| ") left;
-        Printf.printf "%s%d\n" indent n;
-        print (indent ^ "| ") right;
-        Printf.printf "%s----\n" indent
-  in
-  print "" tree
-
 let tSmall = Node('b', Leaf 1, Leaf 2)
 
 let tBig = Node ('a',
