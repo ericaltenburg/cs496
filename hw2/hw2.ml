@@ -4,7 +4,25 @@
 	Date: 			10 February 2020 
 *)
 
-type ('a, 'b) dTree = Leaf of 'a | Node of 'b * ('a,'b) dTree * ('a,'b) dTree
+type ('a, 'b) dTree = Leaf of 'b | Node of 'a * ('a, 'b) dTree * ('a, 'b) dTree
+
+(* Just for testing, IGNORE *)
+type dtree = Node of char * dtree * dtree | Child of int;;
+let draw dtree =
+  let rec print indent dtree =
+    match dtree with
+       Child n -> 
+        Printf.printf "%s%d\n" indent n
+     | Node (left, n, right) ->
+        Printf.printf "%s----\n" indent;
+        print (indent ^ "| ") left;
+        Printf.printf "%s%d\n" indent n;
+        print (indent ^ "| ") right;
+        Printf.printf "%s----\n" indent
+  in
+  print "" tree
+
+let tSmall = Node('b', Leaf 1, Leaf 2)
 
 let tBig = Node ('a',
 				Node('r',
@@ -40,23 +58,25 @@ let rec dTree_size_h t i: int =
 let dTree_size t : int =
 	dTree_size_h t 1
 
-let rec dTree_paths_h (t: ('a, 'b) dTree) (way:int) =
+let rec dTree_paths (t: ('a, 'b) dTree) : 'b list list = 
 	match t with
-	| Leaf t -> []
-	| Node (d, lt, rt) -> List.cons (way :: (dTree_paths_h lt 0)) (way :: (dTree_paths_h rt 1))
+	| Leaf l -> []::[]
+	| Node(d, lt, rt) -> List.map (List.cons 0) (dTree_paths lt) @ List.map (List.cons 1) (dTree_paths rt)
 
-let dTree_paths (t: ('a, 'b) dTree) = 
-	dTree_paths_h t 0 :: dTree_paths_h t 1 :: []
-	
-(* let rec dTree_is_perfect_h t d : bool =
-
-
+let rec dTree_is_perfect_h ll len = 
+	match ll with
+	| [] -> true
+	| h::t -> if (List.length h == len)
+				then dTree_is_perfect_h t len
+				else false
 
 let dTree_is_perfect t : bool = 
-	dTree_is_perfect_h t 0 *)
+	dTree_is_perfect_h (dTree_paths t) (List.length(List.hd (dTree_paths t)))
 
-let dTree_map f g t = 
-	failwith "Implement"
+let rec dTree_map f g t = 
+	match t with
+	| Leaf l -> Leaf (g l)
+	| Node(d, lt, rt) -> Node ((f d), dTree_map f g lt, dTree_map f g rt)
 
 let list_to_tree (l: char list) = 
 	failwith "Implement"
@@ -64,5 +84,5 @@ let list_to_tree (l: char list) =
 let replace_leaf_at t f = 
 	failwith "Implement"
 
-let bf_to_dTree = 
+let bf_to_dTree t = 
 	failwith "Implement"
