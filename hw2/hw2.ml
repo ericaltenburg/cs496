@@ -56,7 +56,8 @@ let rec dTree_paths (t: ('a, 'b) dTree) : 'b list list =
 let rec dTree_is_perfect_h ll len = 
 	match ll with
 	| [] -> true
-	| h::t -> if (List.length h == len)
+	| h::t -> 	
+				if (List.length h == len)
 				then dTree_is_perfect_h t len
 				else false
 
