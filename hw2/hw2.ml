@@ -63,11 +63,43 @@ let rec dTree_map f g t =
 	| Leaf l -> Leaf (g l)
 	| Node(d, lt, rt) -> Node ((f d), dTree_map f g lt, dTree_map f g rt)
 
-let list_to_tree (l: char list) = 
-	failwith "Implement"
+let rec list_to_tree (l: char list) = 
+	match l with
+	| []-> Leaf 0
+	| h::t -> Node(h, list_to_tree t, list_to_tree t)
+
+let grab_rest f = 
+	match f with
+	| [] -> []
+	| [x] -> [x]
+	| h::t -> t
+
+let rec replace_leaf_at_h t f height lvl = 
+	match t with
+	| Leaf l -> Leaf (snd (List.hd f))
+	| Node (d, lt, rt) -> 
+							if (lvl == (height -1))
+							then Node (d, replace_leaf_at_h lt f height lvl, replace_leaf_at_h rt (grab_rest f) height lvl)
+							else Node (d, (replace_leaf_at_h lt f height (lvl+1)), (replace_leaf_at_h rt f height (lvl+1)))
 
 let replace_leaf_at t f = 
-	failwith "Implement"
+	replace_leaf_at_h t (snd f) (dTree_height t) 0
 
-let bf_to_dTree t = 
-	failwith "Implement"
+let rec helper t drc num = 
+	match t with
+	| Leaf l -> Leaf num
+	| Node (d, lt, rt) -> 
+							if ((List.hd drc) == 0)
+							then Node (d, helper lt (grab_rest drc) num, rt)
+							else Node (d, lt, helper rt (grab_rest drc) num)
+
+let rec test_replace tr lst= 
+	match lst with
+	| [] -> tr
+	| h::t -> test_replace (helper tr (fst h) (snd h)) t
+
+
+
+
+let bf_to_dTree encoding = 
+	replace_leaf_at (list_to_tree (fst encoding)) encoding
