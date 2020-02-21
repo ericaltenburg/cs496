@@ -1,0 +1,126 @@
+# dune utop
+# OCAMLPARAM: unset
+# Workspace root: /Users/altenburg/GitHub/cs496/exercises/letWithUnpair
+$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/h_/njtvwsr50djfrr72qc5hynd00000gn/T/dune816451.output 2> /dev/null
+# Auto-detected concurrency: 12
+# disable binary cache
+$ /usr/local/bin/ocamlc.opt -config > /var/folders/h_/njtvwsr50djfrr72qc5hynd00000gn/T/dune9d70ef.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dyn
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ;
+#  toplevel_path = Some External "/Users/altenburg/.opam/default/lib/toplevel"
+#  ; ocaml_bin = External "/usr/local/bin"
+#  ; ocaml = External "/Users/altenburg/.opam/default/bin/ocaml"
+#  ; ocamlc = External "/usr/local/bin/ocamlc.opt"
+#  ; ocamlopt = Some External "/usr/local/bin/ocamlopt.opt"
+#  ; ocamldep = External "/usr/local/bin/ocamldep.opt"
+#  ; ocamlmklib = External "/usr/local/bin/ocamlmklib.opt"
+#  ;
+#  env =
+#    map
+#      { "DUNE_CONFIGURATOR" : "/usr/local/bin/ocamlc.opt"
+#      ; "INSIDE_DUNE" : "1"
+#      ;
+#      "MANPATH" :
+#        "/Users/altenburg/GitHub/cs496/exercises/letWithUnpair/_build/install/default/bin"
+#      ;
+#      "OCAMLFIND_IGNORE_DUPS_IN" :
+#        "/Users/altenburg/GitHub/cs496/exercises/letWithUnpair/_build/install/default/lib"
+#      ;
+#      "OCAMLPATH" :
+#        "/Users/altenburg/GitHub/cs496/exercises/letWithUnpair/_build/install/default/lib"
+#      ; "OCAML_COLOR" : "always"
+#      ; "OPAMCOLOR" : "always"
+#      }
+#  ; findlib_path = [ External "/Users/altenburg/.opam/default/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; opam_vars = map {}
+#  ;
+#  ocaml_config =
+#    { version = "4.08.1"
+#    ; standard_library_default = "/usr/local/lib/ocaml"
+#    ; standard_library = "/usr/local/lib/ocaml"
+#    ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#    ; ccomp_type = "cc"
+#    ; c_compiler = "clang"
+#    ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#    ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#    ;
+#    bytecomp_c_compiler =
+#      [ "clang"
+#      ; "-O2"
+#      ; "-fno-strict-aliasing"
+#      ; "-fwrapv"
+#      ; "-D_FILE_OFFSET_BITS=64"
+#      ; "-D_REENTRANT"
+#      ]
+#    ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#    ;
+#    native_c_compiler =
+#      [ "clang"
+#      ; "-O2"
+#      ; "-fno-strict-aliasing"
+#      ; "-fwrapv"
+#      ; "-D_FILE_OFFSET_BITS=64"
+#      ; "-D_REENTRANT"
+#      ]
+#    ; native_c_libraries = [ "-lm" ]
+#    ; cc_profile = [ "-pg" ]
+#    ; architecture = "amd64"
+#    ; model = "default"
+#    ; int_size = 63
+#    ; word_size = 64
+#    ; system = "macosx"
+#    ; asm = [ "clang"; "-arch"; "x86_64"; "-Wno-trigraphs"; "-c" ]
+#    ; asm_cfi_supported = true
+#    ; with_frame_pointers = false
+#    ; ext_exe = ""
+#    ; ext_obj = ".o"
+#    ; ext_asm = ".s"
+#    ; ext_lib = ".a"
+#    ; ext_dll = ".so"
+#    ; os_type = "Unix"
+#    ; default_executable_name = "a.out"
+#    ; systhread_supported = true
+#    ; host = "x86_64-apple-darwin19.0.0"
+#    ; target = "x86_64-apple-darwin19.0.0"
+#    ; profiling = true
+#    ; flambda = false
+#    ; spacetime = false
+#    ; safe_string = false
+#    ; exec_magic_number = "Caml1999X025"
+#    ; cmi_magic_number = "Caml1999I025"
+#    ; cmo_magic_number = "Caml1999O025"
+#    ; cma_magic_number = "Caml1999A025"
+#    ; cmx_magic_number = "Caml1999Y025"
+#    ; cmxa_magic_number = "Caml1999Z025"
+#    ; ast_impl_magic_number = "Caml1999M025"
+#    ; ast_intf_magic_number = "Caml1999N025"
+#    ; cmxs_magic_number = "Caml1999D025"
+#    ; cmt_magic_number = "Caml1999T025"
+#    ; natdynlink_supported = true
+#    ; supports_shared_libraries = true
+#    ; windows_unicode = false
+#    }
+#  ;
+#  which =
+#    map
+#      { "ocaml" : Some External "/Users/altenburg/.opam/default/bin/ocaml"
+#      ; "ocamlc" : Some External "/usr/local/bin/ocamlc.opt"
+#      ; "ocamlobjinfo" : Some External "/usr/local/bin/ocamlobjinfo.opt"
+#      }
+#  }
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/interp.ml) > _build/default/src/.let.objs/interp.ml.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/.utop/utop.ml-gen) > _build/default/src/.utop/.utop.eobjs/utop.ml-gen.d
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.let.objs/byte -no-alias-deps -opaque -open Let -o src/.let.objs/byte/let__Interp.cmo -c -impl src/interp.ml)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -a -o src/let.cma src/.let.objs/byte/let.cmo src/.let.objs/byte/let__Ast.cmo src/.let.objs/byte/let__Parser.cmo src/.let.objs/byte/let__Lexer.cmo src/.let.objs/byte/let__Ds.cmo src/.let.objs/byte/let__Interp.cmo)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -bin-annot -I src/.utop/.utop.eobjs/byte -I /Users/altenburg/.opam/default/lib/bytes -I /Users/altenburg/.opam/default/lib/camomile -I /Users/altenburg/.opam/default/lib/camomile/default_config -I /Users/altenburg/.opam/default/lib/camomile/dyn -I /Users/altenburg/.opam/default/lib/camomile/lib_default -I /Users/altenburg/.opam/default/lib/camomile/library -I /Users/altenburg/.opam/default/lib/charInfo_width -I /Users/altenburg/.opam/default/lib/findlib -I /Users/altenburg/.opam/default/lib/lambda-term -I /Users/altenburg/.opam/default/lib/lwt -I /Users/altenburg/.opam/default/lib/lwt/unix -I /Users/altenburg/.opam/default/lib/lwt_log -I /Users/altenburg/.opam/default/lib/lwt_log/core -I /Users/altenburg/.opam/default/lib/lwt_react -I /Users/altenburg/.opam/default/lib/mmap -I /Users/altenburg/.opam/default/lib/ocplib-endian -I /Users/altenburg/.opam/default/lib/react -I /Users/altenburg/.opam/default/lib/result -I /Users/altenburg/.opam/default/lib/seq -I /Users/altenburg/.opam/default/lib/utop -I /Users/altenburg/.opam/default/lib/zed -I /usr/local/lib/ocaml/compiler-libs -I /usr/local/lib/ocaml/threads -I src/.let.objs/byte -I src/.let.objs/native -no-alias-deps -o src/.utop/.utop.eobjs/byte/dune__exe__Utop.cmo -c -impl src/.utop/utop.ml-gen)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -o src/.utop/utop.exe -custom -linkall -warn-error -31 /usr/local/lib/ocaml/compiler-libs/ocamlcommon.cma /usr/local/lib/ocaml/compiler-libs/ocamlbytecomp.cma /usr/local/lib/ocaml/compiler-libs/ocamltoplevel.cma /Users/altenburg/.opam/default/lib/findlib/findlib.cma /Users/altenburg/.opam/default/lib/findlib/findlib_top.cma /Users/altenburg/.opam/default/lib/result/result.cma /Users/altenburg/.opam/default/lib/lwt/lwt.cma /usr/local/lib/ocaml/unix.cma -I /usr/local/lib/ocaml /usr/local/lib/ocaml/bigarray.cma -I /usr/local/lib/ocaml /Users/altenburg/.opam/default/lib/mmap/mmap.cma /Users/altenburg/.opam/default/lib/ocplib-endian/bigstring.cma /usr/local/lib/ocaml/threads/threads.cma -I /usr/local/lib/ocaml /Users/altenburg/.opam/default/lib/lwt/unix/lwt_unix.cma -I /Users/altenburg/.opam/default/lib/lwt/unix /Users/altenburg/.opam/default/lib/react/react.cma /Users/altenburg/.opam/default/lib/lwt_react/lwt_react.cma /Users/altenburg/.opam/default/lib/camomile/default_config/camomileDefaultConfig.cma /Users/altenburg/.opam/default/lib/camomile/library/camomileLibrary.cma /Users/altenburg/.opam/default/lib/camomile/lib_default/camomileLibraryDefault.cma /Users/altenburg/.opam/default/lib/camomile/dyn/camomileLibraryDyn.cma /Users/altenburg/.opam/default/lib/camomile/camomile_yuge.cma /Users/altenburg/.opam/default/lib/charInfo_width/charInfo_width.cma /Users/altenburg/.opam/default/lib/zed/zed.cma /Users/altenburg/.opam/default/lib/lwt_log/core/lwt_log_core.cma /Users/altenburg/.opam/default/lib/lwt_log/lwt_log.cma /Users/altenburg/.opam/default/lib/lambda-term/lambda_term.cma -I /Users/altenburg/.opam/default/lib/lambda-term /Users/altenburg/.opam/default/lib/utop/uTop.cma src/let.cma src/.utop/.utop.eobjs/byte/dune__exe__Utop.cmo)
