@@ -1,3 +1,6 @@
+(* Eric Altenburg
+I pledge my honor that I have abided by the Stevens Honor System. *)
+
 (* The type of the abstract syntax tree (AST). *)
 type expr =
   | Var of string

@@ -1,3 +1,6 @@
+(* Eric Altenburg
+I pledge my honor that I have abided by the Stevens Honor System. *)
+
 open Ast
 open Ds
              
@@ -68,7 +71,7 @@ and
     eval_expr e1 >>=
     int_of_numVal >>= fun n ->
     if n < 0
-    then return @@ NumVal (n*(1))
+    then return @@ NumVal (n*(-1))
     else return @@ NumVal n
   | Cons(e1, e2) ->
     eval_expr e1 >>= fun a ->

@@ -1,39 +1,39 @@
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:0:int.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:0:int is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:0:int.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:2:adds.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:2:adds is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:2:adds.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:4:lets.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:4:lets is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:4:lets.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:6:adds.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:6:adds is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:6:adds.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:8:mults.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:8:mults is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:8:mults.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:10:let.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:10:let is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:10:let.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:12:int.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:12:int is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:12:int.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:14:abs_pos.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:14:abs_pos is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:14:abs_pos.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:17:cons_singleton.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:17:cons_singleton is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:17:cons_singleton.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:19:hd_singleton.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:19:hd_singleton is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:19:hd_singleton.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:21:tl_singleton.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:21:tl_singleton is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:21:tl_singleton.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:23:tl_list1.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:23:tl_list1 is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:23:tl_list1.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:25:null_false.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: Test suite:25:null_false is successful.
-2020-02-28T17:22:25+00:00 Erics-MacBook-Pro.local#01 I: End test suite:25:null_false.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:0:int.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:0:int is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:0:int.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:2:adds.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:2:adds is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:2:adds.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:4:lets.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:4:lets is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:4:lets.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:6:adds.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:6:adds is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:6:adds.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:8:mults.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:8:mults is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:8:mults.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:11:lets.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:11:lets is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:11:lets.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:12:int.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:12:int is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:12:int.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:15:abs_neg.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:15:abs_neg is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:15:abs_neg.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:16:emptylist.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:16:emptylist is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:16:emptylist.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:19:hd_singleton.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:19:hd_singleton is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:19:hd_singleton.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:20:hd_list.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:20:hd_list is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:20:hd_list.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:23:tl_list1.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:23:tl_list1 is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:23:tl_list1.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Start test suite:25:null_false.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: Test suite:25:null_false is successful.
+2020-02-28T23:19:09+00:00 Erics-MacBook-Pro.local#01 I: End test suite:25:null_false.
