@@ -12,8 +12,8 @@ exp_val result : Ok (NumVal 2)
 int result : Error "Oops"
 env result : Ok (EmptyEnv)
 int ea_result : return 1
-env ea_result : return EmptyEnv
- *)
+env ea_result : return EmptyEnv *)
+
  
 type exp_val =
   | NumVal of int
@@ -68,7 +68,6 @@ let rec apply_env : string -> exp_val exp_result =
     if id=v
     then Ok ev
     else apply_env id tail
-
 
 
 (* operations on expressed values *)

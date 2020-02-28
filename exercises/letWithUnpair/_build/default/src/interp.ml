@@ -49,6 +49,10 @@ let rec eval_expr : expr -> exp_val exp_result = fun e ->
     eval_expr e1 >>= fun ev1 ->
     eval_expr e2 >>= fun ev2 ->
     return @@ PairVal(ev1,ev2)
+(*   | Fst (e) ->
+    eval_expr e >>=
+    pair_of_pairVal >>= fun (_,l) ->
+    return l *)
   | Unpair(id1,id2,def,body) ->
     eval_expr def >>=
     pair_of_pairVal >>= fun (l,r) ->
