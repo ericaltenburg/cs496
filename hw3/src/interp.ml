@@ -68,7 +68,7 @@ and
     eval_expr e1 >>=
     int_of_numVal >>= fun n ->
     if n < 0
-    then return @@ NumVal (n*(-1))
+    then return @@ NumVal (n*(1))
     else return @@ NumVal n
   | Cons(e1, e2) ->
     eval_expr e1 >>= fun a ->
@@ -105,7 +105,17 @@ and
     tree_of_treeVal >>= fun rt ->
     return @@ TreeVal (Node(d, lt, rt))
   | CaseT(target,emptycase,id1,id2,id3,nodecase) ->
-    error "implement"
+    eval_expr target >>=
+    tree_of_treeVal >>= fun tre ->
+    begin
+      match tre with
+      | Empty -> eval_expr emptycase
+      | Node(d,lt,rt) -> 
+          extend_env id1 d >>+
+          extend_env id2 @@ TreeVal lt >>+
+          extend_env id3 @@ TreeVal rt >>+
+          eval_expr nodecase
+    end
 and
   eval_prog (AProg e) = eval_expr e
 

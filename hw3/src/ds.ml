@@ -21,16 +21,6 @@ and
   | EmptyEnv
   | ExtendEnv of string*exp_val*env
 
-(* let t = 
-Node(emptylist ,
-  Node(cons(5, cons(2, cons(1, emptylist))), 
-    emptytree ,
-    Node(emptylist , emptytree , emptytree)),
-  Node(tl(cons(5, emptylist)),
-    Node(cons(10, cons(9, cons(8, emptylist))), emptytree , emptytree),
-    Node(emptylist , Node(cons(9, emptylist), emptytree , emptytree),
-    emptytree))) *)
-
 
 (* Environment Abstracted Result *)
 
