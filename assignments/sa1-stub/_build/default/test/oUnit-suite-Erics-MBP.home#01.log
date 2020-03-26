@@ -1,0 +1,15 @@
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: Start test suite:0:int.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: Test suite:0:int is successful.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: End test suite:0:int.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: Start test suite:2:adds.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: Test suite:2:adds is successful.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: End test suite:2:adds.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: Start test suite:4:lets.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: Test suite:4:lets is successful.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: End test suite:4:lets.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: Start test suite:6:letrec_even_odd.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: Test suite:6:letrec_even_odd is successful.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: End test suite:6:letrec_even_odd.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: Start test suite:8:letrec_fib.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: Test suite:8:letrec_fib is successful.
+2020-03-26T21:20:08+00:00 Erics-MBP.home#01 I: End test suite:8:letrec_fib.
