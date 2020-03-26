@@ -64,9 +64,9 @@ let extend_env : string -> exp_val -> env ea_result =
   fun id v env ->
     Ok (ExtendEnv(id,v,env))
 
-let extend_env_rec =
-	fun thing env ->
-		Ok (ExtendEnvRec(thing,env))
+let extend_env_rec : (string*string*Ast.expr) list -> env ea_result =
+	fun decs env ->
+		Ok (ExtendEnvRec(decs,env))
 
 (* let rec meth = fun decs env ->
 	match decs with
