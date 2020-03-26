@@ -76,7 +76,8 @@ and
     eval_expr e2 >>= fun v2 ->
     apply_proc v1 v2
   | Letrec(decs, e2) ->
-    error "implement"
+  	extend_env_rec decs >>+
+  	eval_expr e2
   | Record(fs) ->
     mapM (fun (_,e) -> eval_expr e) fs >>= fun vs ->
     return @@ RecordVal (List.map2 (fun (id,_) v -> (id,v)) fs vs) 

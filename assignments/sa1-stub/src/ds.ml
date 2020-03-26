@@ -64,7 +64,14 @@ let extend_env : string -> exp_val -> env ea_result =
   fun id v env ->
     Ok (ExtendEnv(id,v,env))
 
+let extend_env_rec =
+	fun thing env ->
+		Ok (ExtendEnvRec(thing,env))
 
+(* let rec meth = fun decs env ->
+	match decs with
+	| [] -> []
+	| (a,b,c)::rest -> (extend_env_rec (a,b,c) env) :: meth rest env *)
 
 (* let extend_env_rec : string -> string -> Ast.expr -> env ea_result =
  *   fun id par body env  ->
@@ -79,10 +86,21 @@ let rec apply_env : string -> exp_val ea_result =
     if id=v
     then Ok ev
     else apply_env id tail
-  | ExtendEnvRec(v,par,body,tail) ->
-    if id=v
-    then Ok (ProcVal (par,body,env))
-    else apply_env id tail
+  | ExtendEnvRec(decs,tail) ->
+  		trav_decs id decs tail env
+	and 
+		trav_decs : string -> (string*string*Ast.expr) list -> env -> exp_val ea_result =
+		fun id decs tail env ->
+		match decs with
+		| [] -> apply_env id tail
+		| [(x,y,z)] -> 
+			if id = x
+			then Ok (ProcVal (y,z,env))
+			else apply_env id tail
+		| (a,b,c)::rest ->
+			if id = a
+			then Ok (ProcVal (b,c,env))
+			else trav_decs id rest tail env
       
 let lookup_env : env ea_result =
   fun env ->
