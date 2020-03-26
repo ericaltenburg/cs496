@@ -1,3 +1,6 @@
+(* Name: Eric Altenburg and Hamzah Nizami
+Pledge: I pledge my honor that I have abided by the Stevens Honor System. *)
+
 (* The type of the abstract syntax tree (AST). *)
 
 
