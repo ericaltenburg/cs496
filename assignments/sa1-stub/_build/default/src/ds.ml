@@ -64,14 +64,9 @@ let extend_env : string -> exp_val -> env ea_result =
   fun id v env ->
     Ok (ExtendEnv(id,v,env))
 
-let extend_env_rec =
-	fun thing env ->
-		Ok (ExtendEnvRec(thing,env))
-
-(* let rec meth = fun decs env ->
-	match decs with
-	| [] -> []
-	| (a,b,c)::rest -> (extend_env_rec (a,b,c) env) :: meth rest env *)
+let extend_env_rec : (string*string*Ast.expr) list -> env ea_result =
+	fun decs env ->
+		Ok (ExtendEnvRec(decs,env))
 
 (* let extend_env_rec : string -> string -> Ast.expr -> env ea_result =
  *   fun id par body env  ->
@@ -93,10 +88,6 @@ let rec apply_env : string -> exp_val ea_result =
 		fun id decs tail env ->
 		match decs with
 		| [] -> apply_env id tail
-		| [(x,y,z)] -> 
-			if id = x
-			then Ok (ProcVal (y,z,env))
-			else apply_env id tail
 		| (a,b,c)::rest ->
 			if id = a
 			then Ok (ProcVal (b,c,env))
