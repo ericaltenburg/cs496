@@ -51,10 +51,15 @@ declaration")
     
   (* pairs *)
   | Pair(e1,e2) ->
-   error "type_of_expr: implement"  
+  	type_of_expr e1 >>= fun t1 ->
+  	type_of_expr e2 >>= fun t2 ->
+  	return @@ PairType(t1,t2) 
   | Unpair(id1,id2,e1,e2) ->
-    error "type_of_expr: implement"  
-      
+    type_of_expr e1 >>=
+    pair_of_pairType "unpair: " >>= fun (t1,t2) ->
+    extend_tenv id1 t1 >>+
+    extend_tenv id2 t2 >>+
+    type_of_expr e2
   (* references *)
   | BeginEnd(es) ->
     List.fold_left (fun r e -> r >>= fun _ -> type_of_expr e) (return UnitType) es 
