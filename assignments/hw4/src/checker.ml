@@ -64,11 +64,20 @@ declaration")
   | BeginEnd(es) ->
     List.fold_left (fun r e -> r >>= fun _ -> type_of_expr e) (return UnitType) es 
   | NewRef(e) ->
-    error "type_of_expr: implement"  
+  	type_of_expr e >>= fun t1 ->
+  	return @@ RefType(t1)
   | DeRef(e) ->
-    error "type_of_expr: implement"  
+  	type_of_expr e >>= fun t1 ->
+    (match t1 with
+    	| RefType a ->  return a
+    	| _ -> error "Error: not of type RefType")
   | SetRef(e1,e2) ->
-    error "type_of_expr: implement"  
+  	type_of_expr e1 >>=
+  	arg_of_refType "SetRef: " >>= fun t1 ->
+  	type_of_expr e2 >>= fun t2 ->
+  	if t1=t2
+  	then return UnitType
+  	else error "Error: first argument and second argument do not have the same type"
  
   (* lists *)
   | EmptyList(t) ->
