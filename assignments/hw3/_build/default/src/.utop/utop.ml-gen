@@ -22,7 +22,7 @@ Clflags.include_dirs :=
   ; "/Users/altenburg/.opam/default/lib/zed"
   ; "/usr/local/lib/ocaml/compiler-libs"
   ; "/usr/local/lib/ocaml/threads"
-  ; "/Users/altenburg/GitHub/cs496/hw3/_build/default/src/.proc.objs/byte"
-  ; "/Users/altenburg/GitHub/cs496/hw3/_build/default/src/.proc.objs/native"
+  ; "/Users/altenburg/GitHub/cs496/assignments/hw3/_build/default/src/.proc.objs/byte"
+  ; "/Users/altenburg/GitHub/cs496/assignments/hw3/_build/default/src/.proc.objs/native"
   ];
 UTop_main.main ();

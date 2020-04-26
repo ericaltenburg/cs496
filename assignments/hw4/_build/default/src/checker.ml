@@ -64,23 +64,47 @@ declaration")
   | BeginEnd(es) ->
     List.fold_left (fun r e -> r >>= fun _ -> type_of_expr e) (return UnitType) es 
   | NewRef(e) ->
-    error "type_of_expr: implement"  
+  	type_of_expr e >>= fun t1 ->
+  	return @@ RefType t1
   | DeRef(e) ->
-    error "type_of_expr: implement"  
+  	type_of_expr e >>= fun t1 ->
+    (match t1 with
+    	| RefType a ->  return a
+    	| _ -> error "Error: not of type RefType")
   | SetRef(e1,e2) ->
-    error "type_of_expr: implement"  
+  	type_of_expr e1 >>=
+  	arg_of_refType "SetRef: " >>= fun t1 ->
+  	type_of_expr e2 >>= fun t2 ->
+  	if t1=t2
+  	then return UnitType
+  	else error "Error: first argument and second argument do not have the same type"
  
   (* lists *)
   | EmptyList(t) ->
-    error "type_of_expr: implement"  
+  	return @@ ListType t
   | Cons(h, t) ->
-    error "type_of_expr: implement"  
+  	type_of_expr t >>= fun t1 ->
+  	arg_of_listType "Cons: " t1 >>= fun t2 ->
+  	type_of_expr h >>= fun t3 ->
+  	if t3 = t2 (* both hd and tail match inttype and inttype *)
+  	then return @@ ListType t2
+  	else (match t3 with (* they don't match but the head might be an empty list *) 
+  			| ListType a -> if a = t2
+  							then return @@ ListType t3
+  							else error "cons: type of head and tail do not match"
+  			| _ -> error "cons: type of head and tail do not match")
   | Null(e) ->
-     error "type_of_expr: implement"  
+    type_of_expr e >>=
+    arg_of_listType "Null: " >>= fun _ ->
+    return BoolType
   | Hd(e) ->
-    error "type_of_expr: implement"  
+    type_of_expr e >>=
+    arg_of_listType "Hd: " >>= fun t1 ->
+    return t1  
   | Tl(e) ->
-    error "type_of_expr: implement"  
+    type_of_expr e >>=
+    arg_of_listType "Tl: " >>= fun t1 ->
+    return @@ ListType t1
 
   (* trees *)
   | EmptyTree(t) ->

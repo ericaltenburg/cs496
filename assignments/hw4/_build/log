@@ -1,10 +1,10 @@
 # dune utop
 # OCAMLPARAM: unset
 # Workspace root: /Users/altenburg/GitHub/cs496/assignments/hw4
-$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/h_/njtvwsr50djfrr72qc5hynd00000gn/T/dune11c8de.output 2> /dev/null
+$ /usr/bin/getconf _NPROCESSORS_ONLN > /var/folders/h_/njtvwsr50djfrr72qc5hynd00000gn/T/dune33b227.output 2> /dev/null
 # Auto-detected concurrency: 12
 # disable binary cache
-$ /usr/local/bin/ocamlc.opt -config > /var/folders/h_/njtvwsr50djfrr72qc5hynd00000gn/T/dune417e70.output
+$ /usr/local/bin/ocamlc.opt -config > /var/folders/h_/njtvwsr50djfrr72qc5hynd00000gn/T/dunea8d81b.output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -120,77 +120,37 @@ $ /usr/local/bin/ocamlc.opt -config > /var/folders/h_/njtvwsr50djfrr72qc5hynd000
 #  }
 $ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl src/checker.ml) > _build/default/src/.checked.objs/checker.ml.d
 $ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.checked.objs/byte -no-alias-deps -opaque -open Checked -o src/.checked.objs/byte/checked__Checker.cmo -c -impl src/checker.ml)
-> File "src/checker.ml", line 66, characters 10-13:
-> 66 |   | NewRef(e) ->
->                ^^^
-> Warning 27: unused variable e.
-> File "src/checker.ml", line 68, characters 9-12:
-> 68 |   | DeRef(e) ->
->               ^^^
-> Warning 27: unused variable e.
-> File "src/checker.ml", line 70, characters 11-13:
-> 70 |   | SetRef(e1,e2) ->
->                 ^^
-> Warning 27: unused variable e1.
-> File "src/checker.ml", line 70, characters 14-16:
-> 70 |   | SetRef(e1,e2) ->
->                    ^^
-> Warning 27: unused variable e2.
-> File "src/checker.ml", line 74, characters 13-16:
-> 74 |   | EmptyList(t) ->
->                   ^^^
+> File "src/checker.ml", line 110, characters 13-16:
+> 110 |   | EmptyTree(t) ->
+>                    ^^^
 > Warning 27: unused variable t.
-> File "src/checker.ml", line 76, characters 9-10:
-> 76 |   | Cons(h, t) ->
->               ^
-> Warning 27: unused variable h.
-> File "src/checker.ml", line 76, characters 12-13:
-> 76 |   | Cons(h, t) ->
->                  ^
-> Warning 27: unused variable t.
-> File "src/checker.ml", line 78, characters 8-11:
-> 78 |   | Null(e) ->
->              ^^^
-> Warning 27: unused variable e.
-> File "src/checker.ml", line 80, characters 6-9:
-> 80 |   | Hd(e) ->
->            ^^^
-> Warning 27: unused variable e.
-> File "src/checker.ml", line 82, characters 6-9:
-> 82 |   | Tl(e) ->
->            ^^^
-> Warning 27: unused variable e.
-> File "src/checker.ml", line 86, characters 13-16:
-> 86 |   | EmptyTree(t) ->
->                   ^^^
-> Warning 27: unused variable t.
-> File "src/checker.ml", line 88, characters 9-11:
-> 88 |   | Node(de, le, re) ->
->               ^^
+> File "src/checker.ml", line 112, characters 9-11:
+> 112 |   | Node(de, le, re) ->
+>                ^^
 > Warning 27: unused variable de.
-> File "src/checker.ml", line 88, characters 13-15:
-> 88 |   | Node(de, le, re) ->
->                   ^^
+> File "src/checker.ml", line 112, characters 13-15:
+> 112 |   | Node(de, le, re) ->
+>                    ^^
 > Warning 27: unused variable le.
-> File "src/checker.ml", line 88, characters 17-19:
-> 88 |   | Node(de, le, re) ->
->                       ^^
+> File "src/checker.ml", line 112, characters 17-19:
+> 112 |   | Node(de, le, re) ->
+>                        ^^
 > Warning 27: unused variable re.
-> File "src/checker.ml", line 90, characters 9-12:
-> 90 |   | NullT(t) ->
->               ^^^
+> File "src/checker.ml", line 114, characters 9-12:
+> 114 |   | NullT(t) ->
+>                ^^^
 > Warning 27: unused variable t.
-> File "src/checker.ml", line 92, characters 11-14:
-> 92 |   | GetData(t) ->
+> File "src/checker.ml", line 116, characters 11-14:
+> 116 |   | GetData(t) ->
+>                  ^^^
+> Warning 27: unused variable t.
+> File "src/checker.ml", line 118, characters 10-13:
+> 118 |   | GetLST(t) ->
 >                 ^^^
 > Warning 27: unused variable t.
-> File "src/checker.ml", line 94, characters 10-13:
-> 94 |   | GetLST(t) ->
->                ^^^
-> Warning 27: unused variable t.
-> File "src/checker.ml", line 96, characters 10-13:
-> 96 |   | GetRST(t) ->
->                ^^^
+> File "src/checker.ml", line 120, characters 10-13:
+> 120 |   | GetRST(t) ->
+>                 ^^^
 > Warning 27: unused variable t.
 $ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -a -o src/checked.cma src/.checked.objs/byte/checked.cmo src/.checked.objs/byte/checked__Ast.cmo src/.checked.objs/byte/checked__ReM.cmo src/.checked.objs/byte/checked__Ds.cmo src/.checked.objs/byte/checked__Store.cmo src/.checked.objs/byte/checked__Parser.cmo src/.checked.objs/byte/checked__Lexer.cmo src/.checked.objs/byte/checked__Interp.cmo src/.checked.objs/byte/checked__Dst.cmo src/.checked.objs/byte/checked__Checker.cmo)
 $ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -bin-annot -I src/.utop/.utop.eobjs/byte -I /Users/altenburg/.opam/default/lib/bytes -I /Users/altenburg/.opam/default/lib/camomile -I /Users/altenburg/.opam/default/lib/camomile/default_config -I /Users/altenburg/.opam/default/lib/camomile/dyn -I /Users/altenburg/.opam/default/lib/camomile/lib_default -I /Users/altenburg/.opam/default/lib/camomile/library -I /Users/altenburg/.opam/default/lib/charInfo_width -I /Users/altenburg/.opam/default/lib/findlib -I /Users/altenburg/.opam/default/lib/lambda-term -I /Users/altenburg/.opam/default/lib/lwt -I /Users/altenburg/.opam/default/lib/lwt/unix -I /Users/altenburg/.opam/default/lib/lwt_log -I /Users/altenburg/.opam/default/lib/lwt_log/core -I /Users/altenburg/.opam/default/lib/lwt_react -I /Users/altenburg/.opam/default/lib/mmap -I /Users/altenburg/.opam/default/lib/ocplib-endian -I /Users/altenburg/.opam/default/lib/react -I /Users/altenburg/.opam/default/lib/result -I /Users/altenburg/.opam/default/lib/seq -I /Users/altenburg/.opam/default/lib/utop -I /Users/altenburg/.opam/default/lib/zed -I /usr/local/lib/ocaml/compiler-libs -I /usr/local/lib/ocaml/threads -I src/.checked.objs/byte -I src/.checked.objs/native -no-alias-deps -o src/.utop/.utop.eobjs/byte/dune__exe__Utop.cmo -c -impl src/.utop/utop.ml-gen)
