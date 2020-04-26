@@ -108,18 +108,35 @@ declaration")
 
   (* trees *)
   | EmptyTree(t) ->
-    error "type_of_expr: implement"  
+    return @@ TreeType t
   | Node(de, le, re) ->
-    error "type_of_expr: implement"  
+	type_of_expr de >>= fun e1 ->
+	type_of_expr le >>=
+	arg_of_treeType "Node: " >>= fun e2 ->
+	type_of_expr re >>=
+	arg_of_treeType "Node: " >>= fun e3 ->
+	if e2 = e3
+	then 	if e1 = e2 
+			then return @@ TreeType e1
+			else error "Node: Subtree types do not match data type"
+	else error "Node: Subtree types do not match"
   | NullT(t) ->
-    error "type_of_expr: implement"  
+    type_of_expr t >>= 
+    arg_of_treeType "NullT: " >>= fun _ ->
+    return @@ BoolType
   | GetData(t) ->
-    error "type_of_expr: implement"  
+    type_of_expr t >>= 
+    arg_of_treeType "GetData: " >>= fun e ->
+    return e
   | GetLST(t) ->
-    error "type_of_expr: implement"  
+    type_of_expr t >>=
+    arg_of_treeType "GetLST: " >>= fun e ->
+    return @@ TreeType e
   | GetRST(t) ->
-    error "type_of_expr: implement"  
-
+  	type_of_expr t >>= 
+  	arg_of_treeType "GetRST: " >>= fun e ->
+  	return @@ TreeType e
+  	
   | Debug(_e) ->
     string_of_tenv >>= fun str ->
     print_endline str;
