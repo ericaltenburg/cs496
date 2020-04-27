@@ -60,6 +60,7 @@ declaration")
     extend_tenv id1 t1 >>+
     extend_tenv id2 t2 >>+
     type_of_expr e2
+
   (* references *)
   | BeginEnd(es) ->
     List.fold_left (fun r e -> r >>= fun _ -> type_of_expr e) (return UnitType) es 
@@ -67,10 +68,9 @@ declaration")
   	type_of_expr e >>= fun t1 ->
   	return @@ RefType t1
   | DeRef(e) ->
-  	type_of_expr e >>= fun t1 ->
-    (match t1 with
-    	| RefType a ->  return a
-    	| _ -> error "Error: not of type RefType")
+  	type_of_expr e >>=
+    arg_of_refType "DeRef: " >>= fun e1 ->
+    return e1
   | SetRef(e1,e2) ->
   	type_of_expr e1 >>=
   	arg_of_refType "SetRef: " >>= fun t1 ->
@@ -108,17 +108,34 @@ declaration")
 
   (* trees *)
   | EmptyTree(t) ->
-    error "type_of_expr: implement"  
+    return @@ TreeType t
   | Node(de, le, re) ->
-    error "type_of_expr: implement"  
+	type_of_expr de >>= fun e1 ->
+	type_of_expr le >>=
+	arg_of_treeType "Node: " >>= fun e2 ->
+	type_of_expr re >>=
+	arg_of_treeType "Node: " >>= fun e3 ->
+	if e2 = e3
+	then 	if e1 = e2 
+			then return @@ TreeType e1
+			else error "Node: Subtree types do not match data type"
+	else error "Node: Subtree types do not match"
   | NullT(t) ->
-    error "type_of_expr: implement"  
+    type_of_expr t >>= 
+    arg_of_treeType "NullT: " >>= fun _ ->
+    return @@ BoolType
   | GetData(t) ->
-    error "type_of_expr: implement"  
+    type_of_expr t >>= 
+    arg_of_treeType "GetData: " >>= fun e ->
+    return e
   | GetLST(t) ->
-    error "type_of_expr: implement"  
+    type_of_expr t >>=
+    arg_of_treeType "GetLST: " >>= fun e ->
+    return @@ TreeType e
   | GetRST(t) ->
-    error "type_of_expr: implement"  
+  	type_of_expr t >>= 
+  	arg_of_treeType "GetRST: " >>= fun e ->
+  	return @@ TreeType e
 
   | Debug(_e) ->
     string_of_tenv >>= fun str ->

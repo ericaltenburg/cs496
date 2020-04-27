@@ -60,6 +60,7 @@ declaration")
     extend_tenv id1 t1 >>+
     extend_tenv id2 t2 >>+
     type_of_expr e2
+
   (* references *)
   | BeginEnd(es) ->
     List.fold_left (fun r e -> r >>= fun _ -> type_of_expr e) (return UnitType) es 
@@ -67,10 +68,9 @@ declaration")
   	type_of_expr e >>= fun t1 ->
   	return @@ RefType t1
   | DeRef(e) ->
-  	type_of_expr e >>= fun t1 ->
-    (match t1 with
-    	| RefType a ->  return a
-    	| _ -> error "Error: not of type RefType")
+  	type_of_expr e >>=
+    arg_of_refType "DeRef: " >>= fun e1 ->
+    return e1
   | SetRef(e1,e2) ->
   	type_of_expr e1 >>=
   	arg_of_refType "SetRef: " >>= fun t1 ->
@@ -136,7 +136,7 @@ declaration")
   	type_of_expr t >>= 
   	arg_of_treeType "GetRST: " >>= fun e ->
   	return @@ TreeType e
-  	
+
   | Debug(_e) ->
     string_of_tenv >>= fun str ->
     print_endline str;
