@@ -1,3 +1,5 @@
+(* I pledge my honor that I have abided by the Stevens Honor System. - Eric Altenburg *)
+
 open Ast
 open ReM
 open Dst
@@ -62,6 +64,7 @@ declaration")
     type_of_expr e2
 
   (* references *)
+  | Unit -> return UnitType
   | BeginEnd(es) ->
     List.fold_left (fun r e -> r >>= fun _ -> type_of_expr e) (return UnitType) es 
   | NewRef(e) ->
@@ -83,16 +86,23 @@ declaration")
   | EmptyList(t) ->
   	return @@ ListType t
   | Cons(h, t) ->
-  	type_of_expr t >>= fun t1 ->
+(*   	type_of_expr t >>= fun t1 ->
   	arg_of_listType "Cons: " t1 >>= fun t2 ->
   	type_of_expr h >>= fun t3 ->
   	if t3 = t2 (* both hd and tail match inttype and inttype *)
   	then return @@ ListType t2
-  	else (match t3 with (* they don't match but the head might be an empty list *) 
+  	else (match t3 with they don't match but the head might be an empty list 
   			| ListType a -> if a = t2
   							then return @@ ListType t3
   							else error "cons: type of head and tail do not match"
-  			| _ -> error "cons: type of head and tail do not match")
+  			| _ -> error "cons: type of head and tail do not match") *)
+
+  	type_of_expr t >>= fun t1 ->
+  	arg_of_listType "Cons: " t1 >>= fun t2 ->
+  	type_of_expr h >>= fun t3 ->
+  	if t3 = t2
+  	then return @@ ListType t2
+    else error "cons: Type of head and tail do not match"
   | Null(e) ->
     type_of_expr e >>=
     arg_of_listType "Null: " >>= fun _ ->
