@@ -71,9 +71,13 @@ declaration")
   	type_of_expr e >>= fun t1 ->
   	return @@ RefType t1
   | DeRef(e) ->
-  	type_of_expr e >>=
+  	(* type_of_expr e >>=
     arg_of_refType "DeRef: " >>= fun e1 ->
-    return e1
+    return e1 *)
+    type_of_expr e >>= fun nr ->
+    (match nr with 
+    | RefType a -> return a
+	| _ -> error "not a ref type")
   | SetRef(e1,e2) ->
   	type_of_expr e1 >>=
   	arg_of_refType "SetRef: " >>= fun t1 ->

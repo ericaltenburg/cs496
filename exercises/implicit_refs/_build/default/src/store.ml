@@ -3,6 +3,8 @@ open Ds
 type 'a t = { mutable data: 'a array; mutable size: int}
   (* data is declared mutable so the store may be resized *)
 
+(* let remove_ref : 'a t ->  *)
+
 let empty_store : int -> 'a -> 'a t =
   fun i v -> { data=Array.make i v; size=0 }
 
