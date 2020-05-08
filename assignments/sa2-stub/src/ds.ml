@@ -1,3 +1,6 @@
+(* Eric Altenburg and Hamzah Nizami
+I pledge my honor that I have abided by the Stevens Honor System. *)
+
 (* This file defines expressed values and environments *)
 
 
