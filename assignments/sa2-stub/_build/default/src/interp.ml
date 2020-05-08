@@ -59,23 +59,20 @@ let initialize_class_env cs =
   in g_class_env := [];
      initialize_class_env' cs cs
 
-let rec lookup_class : string -> class_env -> class_decl ea_result  = fun c_name c_env -> (* changing to rec for now *)
-  match c_env with
-  | [] -> error "lookup_class: class c_name not found"
-  | (a,b)::tl -> if c_name = a
-  					then return b
-  				else lookup_class c_name tl
+let lookup_class : string -> class_env -> class_decl ea_result  = fun c_name c_env ->
+  match (List.assoc_opt c_name c_env) with 
+  | None -> error "lookup_class: class c_name not found"
+  | Some m -> return m
 
 let rec new_env_helper = fun fs env->
 	match fs with
 	| [] -> env
-	| [a] -> extend_env a (NumVal 0)
-	| h::t -> new_env_helper t (extend_env h (RefVal (Store.new_ref g_store (NumVal 0))))
+	| h::t -> new_env_helper t (env >>+ extend_env h (RefVal (Store.new_ref g_store (NumVal 0))))
     
-let rec new_env : string list -> env ea_result  = fun fs -> 
+let new_env : string list -> env ea_result  = fun fs ->  (* originally rec but changed to non rec *)
 	match fs with
 	| [] -> empty_env ()
-	| h::_ -> new_env_helper fs (empty_env () >>+ extend_env h (RefVal (Store.new_ref g_store (NumVal 0))))
+	| h::t -> new_env_helper t (empty_env () >>+ extend_env h (RefVal (Store.new_ref g_store (NumVal 0))))
  
 let slice fs env =
   let rec slice' fs acc env =
@@ -105,8 +102,7 @@ let rec addIds fs evs =
   | (id,_)::t1, v::t2 -> (id,v):: addIds t1 t2
   | _,_ -> failwith "error: lists have different sizes"
 
-let rec apply_method : string -> exp_val -> exp_val list ->
-  method_decl -> exp_val ea_result = fun m_name self args (pars,body,super,fs) -> 
+let rec apply_method : string -> exp_val -> exp_val list -> method_decl -> exp_val ea_result = fun m_name self args (pars,body,super,fs) -> 
   let l = Store.new_ref g_store self
   and l_args = List.map (fun ev -> RefVal (Store.new_ref g_store ev)) args
   in let l' = Store.new_ref g_store (StringVal super)
@@ -230,13 +226,13 @@ and
     
   (* SOOL operations *)
   | NewObject(c_name,es) ->
-(*     sequence (List.map eval_expr es) >>= fun arguments ->
-    lookup_class c_name !g_class_env >>= fun new_methods ->
-    new_env arguments >>= fun temp_env ->
-    (match (List.assoc_opt "initialize" new_methods) with
-	| None -> return @@ ObjectVal c_name temp_env
-	| Some ev -> apply_method "initialize" _self arguments new_methods) *)
-	error "implement"
+  	sequence(List.map eval_expr es) >>= fun args ->
+  	lookup_class c_name !g_class_env >>= fun (_, flds, meth_env) ->
+  	new_env flds >>= fun flds_env ->
+  	let self = (ObjectVal (c_name,flds_env)) in
+	(match (List.assoc_opt "initialize" meth_env) with
+	| None -> return self
+	| Some m -> apply_method "initialize" self args m >>= fun _ -> return self)
   | Send(e,m_name,es) ->
     eval_expr e >>= fun temp_self ->
     obj_of_objectVal temp_self >>= fun (c_name, _) ->

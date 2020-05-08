@@ -1,43 +1,27 @@
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Start test suite:1:negative-const.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Test suite:1:negative-const is successful.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: End test suite:1:negative-const.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Start test suite:3:nested-arith-left.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Test suite:3:nested-arith-left is successful.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: End test suite:3:nested-arith-left.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Start test suite:5:unbound-variable-1.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Test suite:5:unbound-variable-1 is successful.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: End test suite:5:unbound-variable-1.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Start test suite:7:implicit-refs.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Test suite:7:implicit-refs is successful.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: End test suite:7:implicit-refs.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Start test suite:9:create-empty-class.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Test suite:9:create-empty-class is successful.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: End test suite:9:create-empty-class.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Start test suite:10:create-class-with-field-and-method.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Test suite:10:create-class-with-field-and-method is successful.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: End test suite:10:create-class-with-field-and-method.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Start test suite:13:field_and_param_scope1.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: Test suite:13:field_and_param_scope1 has failed.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: field_and_param_scope1 failed, -0 point(s)
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: expected: Ok (NumVal 25) but got: Error (implement) in test suite:13:field_and_param_scope1.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: Raised at file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: Called from file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: 
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: End test suite:13:field_and_param_scope1.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Start test suite:16:counter-1.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: Test suite:16:counter-1 has failed.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: counter-1 failed, -0 point(s)
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: expected: Ok (ListVal (NumVal 0,NumVal 1)) but got: Error (implement) in test suite:16:counter-1.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: Raised at file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: Called from file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: 
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: End test suite:16:counter-1.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: Start test suite:17:sharedf-counter.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: Test suite:17:sharedf-counter has failed.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: sharedf-counter failed, -0 point(s)
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: expected: Ok (ListVal (ListVal (NumVal 1,NumVal 3),ListVal (NumVal 2,NumVal 3)))
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: but got: Error (implement) in test suite:17:sharedf-counter.
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: Raised at file "src/lib/ounit2/advanced/oUnitAssert.ml", line 45, characters 2-27
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: Called from file "src/lib/ounit2/advanced/oUnitRunner.ml", line 83, characters 13-26
-2020-05-08T01:32:53+00:00 Erics-MBP#02 E: 
-2020-05-08T01:32:53+00:00 Erics-MBP#02 I: End test suite:17:sharedf-counter.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Start test suite:1:negative-const.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Test suite:1:negative-const is successful.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: End test suite:1:negative-const.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Start test suite:3:nested-arith-left.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Test suite:3:nested-arith-left is successful.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: End test suite:3:nested-arith-left.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Start test suite:5:unbound-variable-1.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Test suite:5:unbound-variable-1 is successful.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: End test suite:5:unbound-variable-1.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Start test suite:7:implicit-refs.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Test suite:7:implicit-refs is successful.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: End test suite:7:implicit-refs.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Start test suite:9:create-empty-class.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Test suite:9:create-empty-class is successful.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: End test suite:9:create-empty-class.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Start test suite:11:create-object.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Test suite:11:create-object is successful.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: End test suite:11:create-object.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Start test suite:13:field_and_param_scope1.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Test suite:13:field_and_param_scope1 is successful.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: End test suite:13:field_and_param_scope1.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Start test suite:15:self1.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Test suite:15:self1 is successful.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: End test suite:15:self1.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Start test suite:17:sharedf-counter.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: Test suite:17:sharedf-counter is successful.
+2020-05-08T21:19:19+00:00 Erics-MBP#02 I: End test suite:17:sharedf-counter.
