@@ -231,12 +231,12 @@ and
   (* SOOL operations *)
   | NewObject(c_name,es) ->
 (*     sequence (List.map eval_expr es) >>= fun arguments ->
-    lookup_class c_name !g_class_env >>= fun new_methods ->
+    lookup_class c_name !g_class_env >>= fun (_,_,c) ->
     new_env arguments >>= fun temp_env ->
-    (match (List.assoc_opt "initialize" new_methods) with
+    (match (List.assoc_opt "initialize" c) with
 	| None -> return @@ ObjectVal c_name temp_env
-	| Some ev -> apply_method "initialize" _self arguments new_methods) *)
-	error "implement"
+	| Some ev -> apply_method "initialize" (ObjectVal c_name temp_env) arguments ev) *)
+	error "wrong"
   | Send(e,m_name,es) ->
     eval_expr e >>= fun temp_self ->
     obj_of_objectVal temp_self >>= fun (c_name, _) ->
