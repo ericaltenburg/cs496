@@ -1,0 +1,39 @@
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:0:newref1.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:0:newref1 is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:0:newref1.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:2:setref1.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:2:setref1 is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:2:setref1.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:4:deref2.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:4:deref2 is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:4:deref2.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:6:pair2 .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:6:pair2  is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:6:pair2 .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:8:pair_proc .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:8:pair_proc  is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:8:pair_proc .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:10:unpair_proc .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:10:unpair_proc  is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:10:unpair_proc .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:12:emptylist .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:12:emptylist  is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:12:emptylist .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:14:single_ele_bool .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:14:single_ele_bool  is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:14:single_ele_bool .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:16:null_list .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:16:null_list  is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:16:null_list .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:18:tl_list_int .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:18:tl_list_int  is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:18:tl_list_int .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:20:null_tree .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:20:null_tree  is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:20:null_tree .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:22:get_data_tree .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:22:get_data_tree  is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:22:get_data_tree .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Start test suite:24:get_rst .
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: Test suite:24:get_rst  is successful.
+2020-05-06T02:19:57+00:00 Erics-MBP#01 I: End test suite:24:get_rst .
