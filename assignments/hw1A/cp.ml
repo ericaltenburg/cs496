@@ -167,3 +167,21 @@ let rec compress (p:coded_pic):coded_pic =
 	| h::t -> 	if (tri_aligned h (List.hd t) (List.nth t 1))
 				then h :: compress (make_list t)
 				else h::compress t
+
+let rec stutter_helper (m:int) (n:int) = 
+	if n > 0
+	then m :: stutter_helper m (n-1)
+	else []
+
+let rec stutter (m:int) (n:int) =  
+	if m >= 0
+	then (stutter_helper m n :: []) @ stutter (m-1) n
+	else []
+
+let rec is_zero_list l = 
+match l with
+| [] -> []
+| h::t ->
+	if h = 0
+	then [true] @ is_zero_list t
+	else [false] @ is_zero_list t
