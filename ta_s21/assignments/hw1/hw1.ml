@@ -118,8 +118,4 @@ let rec grab_next_few num lst =
 let rec compress lst =
 	match lst with
 	| [] -> []
-	| h::t -> (h, count_how_many 0 (List.hd lst) lst) :: compress (grab_next_few (count_how_many 0 (List.hd lst) lst) lst)
-
-
-
-
+	| h::t -> (h, count_how_many 0 h lst) :: compress (grab_next_few (count_how_many 0 h lst) lst)
