@@ -1,0 +1,7 @@
+_build/
+.merlin
+*.install
+*.elc
+.*.swp
+*.DS_Store
+ta_s21/
